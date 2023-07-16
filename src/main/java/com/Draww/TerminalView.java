@@ -65,8 +65,8 @@ public class TerminalView {
 
     public void calculateNewFrame() {
         for (Shape shape : this.shapes) {
-            ShapeAbstractor.drawToBuf(this.window, shape);
-//            shape.drawToBuf(this.window);
+//            ShapeAbstractor.drawToBuf(this.window, shape);
+            shape.drawToBuf(this.window);
         }
     }
 

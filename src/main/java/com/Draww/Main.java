@@ -10,19 +10,30 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
 
+        Point p = new Point(35.0f, 34.0f);
+        Point p1 = new Point(70.0f, 70.2f);
+        Point p2 = new Point(120.6f, 35.4f);
+        Triangle tri1 =  new Triangle(p, p1,p2);
+
+        Circle ci = new Circle(new Point(100.f, 50.f), 30.f);
+
+
+        Circle ci2 = new Circle(new Point(200.f, 50.f), 20.f);
+
+
+
+
+
         StateInitalizationFn initFn = () -> {
             GameState state = new GameState("TerminalGame", new ArrayList<>());
 
-            Point p = new Point(35.0f, 34.0f);
-            Point p1 = new Point(70.0f, 70.2f);
-            Point p2 = new Point(120.6f, 35.4f);
-            Triangle tri1 =  new Triangle(p, p1,p2);
 
-            Circle ci = new Circle(new Point(500.f, 50.f), 30.f);
 
-            state.shapes().add(tri1);
+//            state.shapes().add(tri1);
 
             state.shapes().add(ci);
+
+            state.shapes().add(ci2);
 
 //            Rectangle r = new Rectangle(p, p1);
 //            state.shapes().add(r);
@@ -42,17 +53,9 @@ public class Main {
             @SuppressWarnings("unchecked") GameState state = (GameState) S;
 
             var shapes = state.shapes();
-            int tri1Id = 0;
-            Triangle tr =  (Triangle)shapes.get(tri1Id);
-//             tr.translate(new Point(2.f, 2.f));
-            tr.rotate((float)Math.toRadians(10.f));
-            Circle ci =  (Circle)shapes.get(1);
-            ci.translate(new Point(2.f, 1.f));
 
-//            int rId = 0;
-//            Rectangle r =  (Rectangle)shapes.get(rId);
-////            r.rotate((float)Math.toRadians(10.f));
-//            ShapeAbstractor.rotate(r, (float)Math.toRadians(10.f) );
+
+
         };
 
 
