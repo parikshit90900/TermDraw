@@ -7,8 +7,9 @@ import static java.lang.System.out;
 
 public class Circle implements Shape {
 
-    Point center;
-    float radius;
+    public Point center;
+    public float radius;
+
 
     public Circle(Point p, float r) {
         this.center = p;

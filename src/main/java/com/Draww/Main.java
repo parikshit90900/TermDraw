@@ -15,12 +15,14 @@ public class Main {
         Point p2 = new Point(120.6f, 35.4f);
         Triangle tri1 =  new Triangle(p, p1,p2);
 
-        Circle ci = new Circle(new Point(100.f, 50.f), 30.f);
+        Circle ci1 = new Circle(new Point(100.f, 50.f), 20.f);
 
 
-        Circle ci2 = new Circle(new Point(200.f, 50.f), 20.f);
+        Circle ci2 = new Circle(new Point(200.f, 50.f), 15.f);
 
+        Point sp1 = new Point(2.f,0.f);
 
+        Point sp2 = new Point(-2.f,0.f);
 
 
 
@@ -31,7 +33,7 @@ public class Main {
 
 //            state.shapes().add(tri1);
 
-            state.shapes().add(ci);
+            state.shapes().add(ci1);
 
             state.shapes().add(ci2);
 
@@ -46,6 +48,7 @@ public class Main {
             // @SuppressWarnings("unchecked")
             @SuppressWarnings(value = "unchecked") var state = (GameState) S;
             return state.shapes();
+
         };
 
         GameLoopFunction Fn = (S) -> {
@@ -53,6 +56,15 @@ public class Main {
             @SuppressWarnings("unchecked") GameState state = (GameState) S;
 
             var shapes = state.shapes();
+
+            ci1.translate(sp1);
+
+            ci2.translate(sp2);
+
+            if ( ci1.center.x * ci2.center.x <= ci1.radius*ci2.radius ) {
+                sp1.x = -sp1.x;
+                sp2.x = -sp2.x;
+            }
 
 
 
