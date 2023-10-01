@@ -118,6 +118,10 @@ public class Rectangle implements Shape{
     public void translate(Point p) {
         this.p1.addInPlace(p);
         this.p3.addInPlace(p);
+        this.p2.addInPlace(p);
+        this.p4.addInPlace(p);
+
+        
     }
 
     @Override
